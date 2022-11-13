@@ -31,6 +31,7 @@ export default function AddProducts({
   const addData = async () => {
     setLoading(true);
     const id = session.data.user.objId;
+    console.log(id);
     let obj = {
       name,
       image,
@@ -48,10 +49,10 @@ export default function AddProducts({
     }).then((res) => {
       setA((a) => a + 1);
       setLoading(false);
+      onClose();
     });
 
     // console.log(obj);
-    onClose();
   };
 
   return (
