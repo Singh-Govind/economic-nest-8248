@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import * as React from "react";
 import ProductCard from "./ProductCard";
 // import  products  from './_data'
-import products from "../../../components/_data";
+import product from "../../../components/_data";
 import ProductGrid from "./ProductGrid";
 import axios from "axios";
 
