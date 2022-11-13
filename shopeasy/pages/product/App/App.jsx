@@ -6,16 +6,20 @@ import ProductCard from "./ProductCard";
 import ProductGrid from "./ProductGrid";
 import axios from "axios";
 
-export default function App() {
+export default function App(props) {
   const [data, setData] = React.useState([]);
 
   const getData = async () => {
     let res = await axios.get("http://localhost:3000/api/products/category");
     setData(res.data.data);
-    console.log(res.data.data);
+    console.log("data by getdata", res.data.data);
   };
   React.useEffect(() => {
-    getData();
+    setData(props.data);
+    console.log("this props will debug my code", props);
+    if (!props) {
+      getData();
+    }
   }, []);
   return (
     <Box
@@ -33,10 +37,20 @@ export default function App() {
       }}
     >
       <ProductGrid>
-        {data.map((product) => (
+        {data?.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </ProductGrid>
     </Box>
   );
 }
+
+export const getServerSideProps = async () => {
+  let res = await axios.get("http://localhost:3000/api/products/category");
+
+  return {
+    props: {
+      data: res.data.data,
+    },
+  };
+};

@@ -25,7 +25,7 @@ export default function ProductGrid(props) {
         base: "8",
         md: "10",
       }}
-      // {...props}
+      {...props}
     />
   );
 }
