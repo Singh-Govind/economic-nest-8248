@@ -13,6 +13,8 @@ import {
 import TableBody from "./TableBody";
 
 export default function AllUsersBox() {
+  document.title = "Users | Admin";
+
   return (
     <Box padding="2rem" width="100%">
       <Heading>Users</Heading>

@@ -6,10 +6,14 @@ import styles from "./ProductBox.module.css";
 import { MdOutlineMonetizationOn } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsBox } from "react-icons/bs";
+import Head from "next/head";
 
 export default function Dashboard({ changeLinkTarget }) {
   return (
     <>
+      <Head>
+        <title>Dashboard | Admin</title>
+      </Head>
       <Box padding="2rem 3rem" w="100%">
         <Heading>Dashboard</Heading>
         <Flex mt="5rem" justifyContent="space-around" fontSize="1.8rem">

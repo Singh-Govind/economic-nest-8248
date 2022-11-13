@@ -19,6 +19,7 @@ import AddProducts from "./AddProducts";
 import TableBody from "./TableBody";
 
 export default function ProductBox() {
+  document.title = "Products | Admin";
   let sr = 1;
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [allProductData, setAllProductData] = useState([]);
