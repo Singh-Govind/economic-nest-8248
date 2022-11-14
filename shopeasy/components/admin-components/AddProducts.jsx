@@ -26,11 +26,10 @@ export default function AddProducts({
   const [image, setImage] = useState("");
   const [price, setPrice] = useState("");
   const [type, setType] = useState("");
-  const session = useSession();
 
   const addData = async () => {
     setLoading(true);
-    const id = session.data.user.objId;
+    const id = "4878";
     console.log(id);
     let obj = {
       name,

@@ -28,11 +28,11 @@ export default function EditItem({
   const [price, setPrice] = useState(item.price);
   const [type, setType] = useState(item.type);
 
-  const session = useSession();
+  // const session = useSession();
 
   const editData = async () => {
     setEditLoading(true);
-    const id = session.data.user.objId;
+    const id = "4878";
     let obj = {
       name,
       image,
@@ -42,7 +42,7 @@ export default function EditItem({
 
     axios({
       method: "put",
-      url: `http://localhost:3000/api/products/category?id=${item._id}`,
+      url: `/api/products/category?id=${item._id}`,
       data: obj,
       headers: {
         id,

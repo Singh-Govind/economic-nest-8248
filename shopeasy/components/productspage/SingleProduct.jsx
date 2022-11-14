@@ -30,7 +30,7 @@ function ProductAddToCart({ grid, products }) {
     const id = data.user.objId;
     console.log("objId : -", id, " prodId : -", el._id);
     await axios
-      .post(`https://vercel.com/singh-govind/economic-nest-8248/api/cart`, {
+      .post(`/api/cart`, {
         userId: id,
         productid: el._id,
         quantity: 1,

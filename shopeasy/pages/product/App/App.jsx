@@ -10,9 +10,7 @@ export default function App(props) {
   const [data, setData] = React.useState([]);
 
   const getData = async () => {
-    let res = await axios.get(
-      "https://vercel.com/singh-govind/economic-nest-8248/api/products/category"
-    );
+    let res = await axios.get("/api/products/category");
     setData(res.data.data);
     console.log("data by getdata", res.data.data);
   };
@@ -48,9 +46,7 @@ export default function App(props) {
 }
 
 export const getServerSideProps = async () => {
-  let res = await axios.get(
-    "https://vercel.com/singh-govind/economic-nest-8248/api/products/category"
-  );
+  let res = await axios.get("/api/products/category");
 
   return {
     props: {

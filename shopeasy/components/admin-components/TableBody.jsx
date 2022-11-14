@@ -38,14 +38,14 @@ export default function TableBody({ item, sr, setA }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [delLoading, setDelLoading] = useState(false);
   const [editLoading, setEditLoading] = useState(false);
-  const session = useSession();
+  // const session = useSession();
 
   const deleteData = async (id) => {
-    const oId = session.data.user.objId;
+    const oId = "4878";
     setDelLoading(true);
     await axios({
       method: "delete",
-      url: `https://vercel.com/singh-govind/economic-nest-8248/api/products/category?id=${id}`,
+      url: `/api/products/category?id=${id}`,
       headers: {
         id: oId,
       },

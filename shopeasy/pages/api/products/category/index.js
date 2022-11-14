@@ -11,6 +11,7 @@ import categoryModal from "../../../../modals/products/category";
 import NextCors from "nextjs-cors";
 
 export default async function filter(req, res) {
+  const adminKey = "4878";
   await NextCors(req, res, {
     // Options
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
@@ -22,9 +23,9 @@ export default async function filter(req, res) {
     await dbConnect();
     // authorization
     const { id } = req.headers;
-    const authorization = await authModal.find({ _id: id });
-    console.log("authorization", authorization);
-    if (authorization[0]?.role === "admin") {
+    // const authorization = await authModal.find({ _id: id });
+    // console.log("authorization", authorization);
+    if (id === adminKey) {
       const { id } = req.query;
       console.log(id);
       const deleteitem = await categoryModal.deleteOne({ _id: id });
@@ -46,11 +47,10 @@ export default async function filter(req, res) {
     // "type": "shoes",
     // "ratings": 3.5
     await dbConnect();
-
     const { id } = req.headers;
-    const authorization = await authModal.find({ _id: id });
+    // const authorization = await authModal.find({ _id: id });
     // console.log("authorization", authorization)
-    if (authorization[0]?.role === "admin") {
+    if (id === adminKey) {
       const items = req.body;
       // console.log(items)
       const additem = new categoryModal(
@@ -72,9 +72,9 @@ export default async function filter(req, res) {
     await dbConnect();
     // authorization
     const { id } = req.headers;
-    const authorization = await authModal.find({ _id: id });
-    console.log("authorization", authorization);
-    if (authorization[0]?.role === "admin") {
+    // const authorization = await authModal.find({ _id: id });
+    // console.log("authorization", authorization);
+    if (id === adminKey) {
       const { id } = req.query;
 
       const data = req.body;
@@ -207,9 +207,9 @@ export default async function filter(req, res) {
   }
 }
 
-// https://vercel.com/singh-govind/economic-nest-8248/api/products/category?brand=Roadster&ratings=3&cmd=lte
-// https://vercel.com/singh-govind/economic-nest-8248/api/products/category?discount_price=892
-// https://vercel.com/singh-govind/economic-nest-8248/api/products/category?price=892
+// /api/products/category?brand=Roadster&ratings=3&cmd=lte
+// /api/products/category?discount_price=892
+// /api/products/category?price=892
 
 // {
 //     "_id": "6370a0a90fcf1d6f21a785f1",

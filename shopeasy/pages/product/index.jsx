@@ -78,7 +78,7 @@ export default function SingleProduct() {
       console.log("objId : -", id, " prodId : -", localData._id);
 
       await axios
-        .post(`https://vercel.com/singh-govind/economic-nest-8248/api/cart`, {
+        .post(`/api/cart`, {
           userId: id,
           productid: localData._id,
           quantity: 1,
@@ -92,9 +92,7 @@ export default function SingleProduct() {
     // console.log(res,"Hello")
     // let id = res.e.productid;
     await axios
-      .get(
-        `https://vercel.com/singh-govind/economic-nest-8248/api/products/category?findbyid=${localData._id}`
-      )
+      .get(`/api/products/category?findbyid=${localData._id}`)
       .then((res) => setCart([...cart, res.data.data]));
   }
   console.log(cart);
@@ -103,12 +101,9 @@ export default function SingleProduct() {
 
     console.log("objId : -", id, " prodId : -", localData._id);
 
-    let cartData = await axios.get(
-      `https://vercel.com/singh-govind/economic-nest-8248/api/cart`,
-      {
-        userId: id,
-      }
-    );
+    let cartData = await axios.get(`/api/cart`, {
+      userId: id,
+    });
     setCart(cartData.data);
     // console.log(cartData)
   }
@@ -185,7 +180,7 @@ export default function SingleProduct() {
       img: img,
     },
     {
-      img: "https://vercel.com/singh-govind/economic-nest-8248/shopeeasy-logo.png",
+      img: "/shopeeasy-logo.png",
     },
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -209,9 +204,7 @@ export default function SingleProduct() {
   };
 
   const getData = async () => {
-    let res = await axios.get(
-      "https://vercel.com/singh-govind/economic-nest-8248/api/products/category"
-    );
+    let res = await axios.get("/api/products/category");
     setresData(res.data.data);
     // console.log(res.data)
     // console.log(resdata)

@@ -14,7 +14,7 @@ Open [https://vercel.com/singh-govind/economic-nest-8248](https://vercel.com/sin
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [https://vercel.com/singh-govind/economic-nest-8248/api/hello](https://vercel.com/singh-govind/economic-nest-8248/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [/api/hello](/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 

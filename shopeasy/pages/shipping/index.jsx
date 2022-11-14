@@ -11,9 +11,7 @@ export default function Shipping() {
   const [cart, setCart] = useState({});
   const router = useRouter();
   async function getDatas(val) {
-    let data = await axios.get(
-      `https://vercel.com/singh-govind/economic-nest-8248/api/products/category?findbyid=${val._id}`
-    );
+    let data = await axios.get(`/api/products/category?findbyid=${val._id}`);
     console.log(data);
     setCart(data.data.data);
   }
