@@ -45,7 +45,7 @@ export default function TableBody({ item, sr, setA }) {
     setDelLoading(true);
     await axios({
       method: "delete",
-      url: `http://localhost:3000/api/products/category?id=${id}`,
+      url: `https://vercel.com/singh-govind/economic-nest-8248/api/products/category?id=${id}`,
       headers: {
         id: oId,
       },

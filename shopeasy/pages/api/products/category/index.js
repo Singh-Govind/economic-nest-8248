@@ -207,9 +207,9 @@ export default async function filter(req, res) {
   }
 }
 
-// http://localhost:3000/api/products/category?brand=Roadster&ratings=3&cmd=lte
-// http://localhost:3000/api/products/category?discount_price=892
-// http://localhost:3000/api/products/category?price=892
+// https://vercel.com/singh-govind/economic-nest-8248/api/products/category?brand=Roadster&ratings=3&cmd=lte
+// https://vercel.com/singh-govind/economic-nest-8248/api/products/category?discount_price=892
+// https://vercel.com/singh-govind/economic-nest-8248/api/products/category?price=892
 
 // {
 //     "_id": "6370a0a90fcf1d6f21a785f1",
