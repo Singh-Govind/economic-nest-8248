@@ -38,9 +38,7 @@ export default function ProductBox() {
   };
 
   const getProductData = async () => {
-    let res = await axios.get(
-      "http://localhost:3000/api/products/category?price=10&cmd=gte"
-    );
+    let res = await axios.get("/api/products/category?price=10&cmd=gte");
     // console.log(res.data);
     setAllProductData(res.data);
   };
