@@ -41,7 +41,7 @@ export default function AddProducts({
 
     axios({
       method: "POST",
-      url: `/api/products/category`,
+      url: `http://localhost:3000/api/products/category`,
       data: obj,
       headers: {
         id,
